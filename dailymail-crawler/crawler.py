@@ -5,7 +5,7 @@ import datetime
 import requests
 from bs4 import BeautifulSoup
 
-today = datetime.datetime.today()
+today = datetime.date.today()
 limit = datetime.date(2014, 4, 25)
 
 dates = []
@@ -14,7 +14,7 @@ dates = []
 while True:
     dates.append(today.strftime('%Y%m%d'))
     today = today - datetime.timedelta(days=1)
-    if today.date() == limit:
+    if today == limit:
         break
 
 domain_url = 'http://www.dailymail.co.uk'
